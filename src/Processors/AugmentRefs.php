@@ -63,10 +63,7 @@ class AugmentRefs implements ProcessorInterface
 
         foreach ($annotations as $annotation) {
             if (property_exists($annotation, 'ref') && !Generator::isDefault($annotation->ref) && is_string($annotation->ref) && !$this->isRef($annotation->ref)) {
-                // check if we have a schema for this
-                if ($refSchema = $analysis->getSchemaForSource($annotation->ref)) {
-                    $annotation->ref = OA\Components::ref($refSchema);
-                } elseif ($refAnnotation = $analysis->getAnnotationForSource($annotation->ref, get_class($annotation))) {
+                if ($refAnnotation = $analysis->getAnnotationForSource($annotation->ref, $annotation->getRefClass())) {
                     $annotation->ref = OA\Components::ref($refAnnotation);
                 }
             }

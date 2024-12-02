@@ -127,4 +127,9 @@ class Response extends AbstractAnnotation
 
         return $valid;
     }
+
+    public function getRefClass(): string
+    {
+        return self::class;
+    }
 }

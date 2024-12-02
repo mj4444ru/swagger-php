@@ -108,4 +108,9 @@ class RequestBody extends AbstractAnnotation
 
         return $data;
     }
+
+    public function getRefClass(): string
+    {
+        return self::class;
+    }
 }

@@ -98,4 +98,9 @@ class Header extends AbstractAnnotation
         Components::class,
         Response::class,
     ];
+
+    public function getRefClass(): string
+    {
+        return self::class;
+    }
 }

@@ -96,4 +96,9 @@ class Examples extends AbstractAnnotation
     public static $_nested = [
         Attachable::class => ['attachables'],
     ];
+
+    public function getRefClass(): string
+    {
+        return self::class;
+    }
 }

@@ -135,4 +135,9 @@ class SecurityScheme extends AbstractAnnotation
 
         return $unmerged;
     }
+
+    public function getRefClass(): string
+    {
+        return self::class;
+    }
 }

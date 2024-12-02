@@ -296,4 +296,9 @@ class Parameter extends AbstractAnnotation
     {
         return parent::_identity(['name', 'in']);
     }
+
+    public function getRefClass(): string
+    {
+        return self::class;
+    }
 }
