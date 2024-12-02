@@ -671,6 +671,11 @@ abstract class AbstractAnnotation implements \JsonSerializable
         return get_class($this) == $rootClass || $this->getRoot() == $rootClass;
     }
 
+    public function getRefClass(): string
+    {
+        return $this::class;
+    }
+
     /**
      * Helper for generating the identity().
      */

@@ -34,4 +34,9 @@ class JsonContent extends Schema
         Examples::class => ['examples', 'example'],
         Attachable::class => ['attachables'],
     ];
+
+    public function getRefClass(): string
+    {
+        return Schema::class;
+    }
 }
